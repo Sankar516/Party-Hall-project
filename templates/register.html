@@ -1,0 +1,67 @@
+<html>
+<head>
+    <link rel="stylesheet" href="/static/css/style1.css" type="text/css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="icon" type="image/png" href="https://png.icons8.com/plasticine/100/technical-support.png">
+</head>
+<title>User Register</title>
+<body>
+{% block body %}
+{% if session['logged_in'] %}
+<p>You're logged in already!</p>
+{% else %}
+ {%with messages = get_flashed_messages()%}
+
+    {%if messages%}
+
+    {% for message in messages %}
+
+        <center><font color="red">{{message}}</font> </center>
+
+    </div>
+
+
+    {%endfor%}
+    {%endif%}
+    {%endwith%}
+{% endif %}
+{% endblock %}
+</body>
+<form action="/userregister" method="POST">
+	<div class="login">
+		<div class="login-screen">
+			<div class="app-title">
+				<h1>Let's get started</h1>
+			</div>
+
+			<div class="login-form">
+				<div class="control-group">
+				<input type="text" class="login-field" value="" placeholder="username" name="username" required>
+				<label class="login-field-icon fui-user" for="login-name"></label>
+				</div>
+
+				<div class="control-group">
+				<input type="password" class="login-field" value="" placeholder="password" name="password" required>
+				<label class="login-field-icon fui-lock" for="login-pass"></label>
+				</div>
+
+        <div class="control-group">
+				<input type="email" class="login-field" value="" placeholder="email" name="email" required>
+				<label class="login-field-icon fui-user" for="login-name"></label>
+				</div>
+
+        <div class="control-group">
+				<input type="text" class="login-field" value="" placeholder="must be of 10 digits" name="phone" pattern="[789][0-9]{9}" required>
+				<label class="login-field-icon fui-user" for="login-name"></label>
+				</div>
+
+                <input type="submit" value="Register" class="btn btn-primary btn-large btn-block" ><br>
+                <a href = "user"><i class="fa fa-chevron-left" aria-hidden="true"></i>
+</a>
+			    <br>
+			</div>
+		</div>
+	</div>
+</form>
+</body>
+</html>

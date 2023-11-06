@@ -1,0 +1,117 @@
+{% include 'user/header.html' %}
+{% block body %}
+  <main>
+  <section class="content">
+    <div class="page-announce valign-wrapper"><a href="#" data-activates="slide-out" class="button-collapse valign hide-on-large-only"><i class="material-icons">menu</i></a><h1 class="page-announce-text valign">// Payment Details</h1></div>
+    <div class="container">
+      <br>
+	  {% for row in result %}
+
+	<div class="form-group">
+              <label>Name</label>
+
+              <input type="text" class="form-control" value="{{session.username}}" disabled>
+
+
+           </div>
+
+
+
+           <div class="form-group">
+
+
+              <label>Date</label>
+
+              <input type="date" value="{{row.5}}" disabled>
+
+
+           </div>
+
+
+           <div class="form-group">
+
+
+              <label>Email</label>
+
+              <input type="text" class="form-control" name="email" value="{{session.email}}" disabled>
+
+
+           </div>
+
+
+	
+		<div class="form-group">
+
+
+              <label>Hall Name</label>
+
+              <input type="text" value="{{row.3}}" disabled>
+
+
+           </div>          	
+
+
+           <div class="form-group">
+
+
+              <label>Purpose</label>
+
+              <input type="text" value="{{row.6}}" disabled>
+
+
+           </div>
+
+	
+	<div class="form-group">
+
+
+              <label>Ammount</label>
+
+              <input type="text" value="{{row.4*row.8}}" disabled>
+
+
+           </div>
+
+	<div class="form-group">
+
+
+              <label>A/C No</label>
+
+              <input type="text" value="{{row.7}}" disabled>
+
+
+           </div>
+
+
+{% endfor %}
+  </section>
+  </main>
+
+        <!-- So this is basically a hack, until I come up with a better solution. autocomplete is overridden
+        in the materialize js file & I don't want that.
+        -->
+        <!-- Yo dawg, I heard you like hacks. So I hacked your hack. (moved the sidenav js up so it actually works) -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+        <script>
+        // Hide sideNav
+        $('.button-collapse').sideNav({
+        menuWidth: 300, // Default is 300
+        edge: 'left', // Choose the horizontal origin
+        closeOnClick: false, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+          draggable: true // Choose whether you can drag to open on touch screens
+          });
+          $(document).ready(function(){
+          $('.tooltipped').tooltip({delay: 50});
+          });
+          $('select').material_select();
+          $('.collapsible').collapsible();
+          </script>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script type="text/javascript" src="{{url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
+
+        <script type="text/javascript" src="{{url_for('static', filename = 'js/bootstrap.min.js')}}"></script>
+
+  {% endblock %}
+{% include 'user/footer.html' %}

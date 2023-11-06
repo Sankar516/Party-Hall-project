@@ -1,0 +1,218 @@
+<html>
+<head>
+    <link rel="stylesheet" href="D:\Confo-master\static\css\style.css" type="text/css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js"></script>
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<link rel="icon" type="image/png" href="https://png.icons8.com/plasticine/100/technical-support.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+table#t01 tr:nth-child(even) {
+    background-color: #eee;
+}
+table#t01 tr:nth-child(odd) {
+   background-color: #fff;
+}
+
+table#t01 th {
+    background-color: black;
+    color: white;
+}
+
+</style>
+</head>
+<title>Welcome To SEAHALL</title>
+<body>
+<div ng-app="bootstrpConf">
+  <nav class="top-nav m-b-3 p-t-1 animated fadeInDown clearfix">
+    <div class="container">
+      <ul class="list-unstyled list-inline">
+        <li class="list-inline-item m-r-1"><a href="#" class="js-scroll" data-scroll-to="#home">Home</a></li>
+
+        <li class="list-inline-item m-r-1"><a href="#" class="js-scroll" data-toggle="modal" data-target="#myModal">Services</a></li>
+	<li class="list-inline-item m-r-1"><a href="#" class="js-scroll" data-toggle="modal" data-target="#myModal1">About us</a></li>
+        <li class="list-inline-item m-r-1"><a href="#" class="js-scroll" data-toggle="modal" data-target="#myModal2">Locations</a></li>
+        <li class="list-inline-item m-r-0"><a href="D:\Confo-master\templates\user.html" class="btn signup-btn btn-danger btn-sm">Sign In / Sign Up</a></li>
+	<li class="list-inline-item m-r-0"><a href="D:\Confo-master\templates\admin.html" class="btn signup-btn btn-sm">Admin</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- jumbotron -->
+  <header id="home" class="top-hero jumbotron-fluid p-b-3 bg-faded">
+    <div class="container animated fadeInUp">
+      <h1 class="display-3">Welcome TO  SEAHALL</h1>
+      <p class="lead m-t-1">India's Largest Event Hall Booking Platform</p>
+      <p class="lead m-t-1 m-b-2">Book Halls from anywhere anytime, whether you've got a conference or a small meetup, Seahall is always there for you!..</p>
+      <button type="button" class="btn btn-lg btn-danger m-t-1" onclick="window.location.href='{{ url_for( 'dash' ) }}';">Book Now</button>
+      <button type="button" class="js-scroll btn btn-lg btn-default m-t-1" data-toggle="modal" data-target="#myModal">Learn More</button>
+    </div>
+  </header>
+<!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Our Services</h4>
+        </div>
+        <div class="modal-body">
+ <table id="t01">
+<thead>
+  <tr>
+    <th>Hall Name</th>
+    <th>Facility</th>
+    <th>Capacity</th>
+    <th>Description</th>
+    <th>Price</th>
+  </tr> 
+</thead>
+<tbody>
+  <tr>
+    <td>{{row.1}}</td>
+    <td>{{row.2}}</td>
+    <td>{{row.3}}</td>
+    <td>{{row.4}}</td>
+    <td>{{row.5}}</td>
+  </tr>
+</tbody>
+</table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+<!-- Modal -->
+  <div class="modal fade" id="myModal1" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">About us</h4>
+        </div>
+        <div class="modal-body">
+<p>
+The Online Party Hall Booking System is divided into four main modules. Each and every module performs a particular work. Those 4 modules are
+
+<p>    1. Maintenance of user and party hall</p>
+<p>    2. Booking the party hall</p>
+<p>    3. Approval and Rejection by In-charge</p>
+<p>    4. Role of Admin</p>
+</p>
+	</div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+<!-- Modal -->
+  <div class="modal fade" id="myModal2" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Our Locations</h4>
+        </div>
+        <div class="modal-body">
+<p>Chennai</p>
+<p>Trichirapalli</p>
+<p>Chengalpattu</p>
+<p>Salem</p>
+<p>Erode</p>
+<p>Thanjavur</p>
+<p>Coimbatore</p>
+
+	</div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+  <footer class="p-y-2">
+    <p class="copyright"><span id="copyright-year">2023-24</span> Designed and Developed by Debjyoti Guha.</p>
+  </footer>
+
+</div>
+<script>
+function stickyNav() {
+  
+  const topNav = document.querySelector('.top-nav'),
+        topNavOffsetTop = topNav.offsetTop,
+        topNavOffsetHeight = topNav.offsetHeight,
+        offsetPoint = document.querySelector('.top-hero').offsetHeight;
+  
+  
+  window.addEventListener('scroll', function () {
+    
+    let windowOffset = this.pageYOffset;
+    
+    if (windowOffset >= offsetPoint) {
+      topNav.classList.add('sticky');
+    } else {
+      topNav.classList.remove('sticky');
+    }
+  
+    
+    
+  });
+  
+  
+  
+}
+
+
+function setCopyrightYear($selector) {
+  var d = new Date();
+  
+  
+  $selector.text(d.getFullYear());
+}
+
+$('.js-scroll').on('click', function(event) {
+  event.preventDefault();
+  var target = $(this).data('scrollTo');
+  $('html, body').animate({
+    scrollTop: $(target).offset().top
+  }, 400);
+});
+
+setCopyrightYear($('#copyright-year'));
+
+stickyNav();
+
+</script>
+</body>
+{% endblock %}
+</html>
